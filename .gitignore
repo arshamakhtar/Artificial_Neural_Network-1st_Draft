@@ -1,0 +1,22 @@
+# Ignore all build output
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/cmake_install.cmake
+/Makefile
+*.exe
+
+# Editor-specific and OS junk
+*.swp
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Object and binary files
+*.o
+*.obj
+*.out
+
+# Optional: VSCode settings (only if you don’t want them tracked)
+#.vscode/

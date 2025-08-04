@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\neural_network.dir/objects.a
+C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\neural_network.dir/objects.a @CMakeFiles\neural_network.dir\objects1.rsp
+C:\msys64\ucrt64\bin\c++.exe  -std=c++14 -g -Wl,--whole-archive CMakeFiles\neural_network.dir/objects.a -Wl,--no-whole-archive -o neural_network.exe -Wl,--out-implib,libneural_network.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\neural_network.dir\linkLibs.rsp

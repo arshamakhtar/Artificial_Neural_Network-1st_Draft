@@ -1,3 +1,0 @@
-C:/Users/JAI SITARAM/neural_network/build/CMakeFiles/neural_network.dir
-C:/Users/JAI SITARAM/neural_network/build/CMakeFiles/edit_cache.dir
-C:/Users/JAI SITARAM/neural_network/build/CMakeFiles/rebuild_cache.dir

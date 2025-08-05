@@ -1,6 +1,7 @@
 # Artificial Neural Network 1st Draft
 
 This is a custom implementation of an Artificial Neural Network written in C++14. It is built from scratch without using any external libraries or machine learning frameworks.
+The c++ implementation helps it to run in the gpu and make use of the multiprocessessing power of the gpu for faster outputs which could be further scaled to more robust and industrial frameworks
 
 ## 🚀 Features
 

@@ -19,12 +19,21 @@ int main(int argc, char **argv){
     nn->setCurrentTarget(input);
 
     //training process
-    for(int i=0; i<30; i++){
-        cout << "Epoc:" <<i<<endl;
+    for(int i=0; i<1000; i++){
+        cout << "Epoch:" <<i<<endl;
         nn->feedForward();
         nn->setErrors();
         cout<< "Total error: "<< nn->getTotalError() << endl;
         nn->backPropogation();
+
+        cout<<"====================\n"<< "OUTPUT:";
+        nn-> printOutputToConsole();
+
+        cout<< "TARGET: ";
+        nn->printTargetToConsole();
+        cout<<"====================="<<endl; 
     }
+    
+    nn->printHistoricalErrors();
     return 0;
 }

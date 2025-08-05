@@ -47,6 +47,10 @@ class NeuralNetwork{
         vector<double> getErrors(){
             return this->errors;
         };
+        void printInputToConsole();
+        void printOutputToConsole();
+        void printTargetToConsole();
+        void printHistoricalErrors();
 
     private:
         //order of Layers    

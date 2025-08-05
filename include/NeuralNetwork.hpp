@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<vector>
+#include <algorithm>
 #include "utils/MultipyMatrix.hpp"
 #include "Matrix.hpp"
 #include "Layer.hpp"
@@ -14,8 +15,11 @@ class NeuralNetwork{
 
         NeuralNetwork(vector<int> topology);
         void setCurrentInput(vector<double> input);
+        void setCurrentTarget(vector<double> target) { this-> target = target; };
         void printToConsole();
         void feedForward();
+        void setErrors();
+        void backPropogation();
 
         Matrix* getNeuronMatrix( int index ){
             return this->Layers.at(index)-> matrixifyVals();
@@ -37,13 +41,25 @@ class NeuralNetwork{
             this->Layers.at(indexLayer)->setVal(indexNeuron, val);
         };
 
+        double getTotalError(){
+            return this-> error;
+        };
+        vector<double> getErrors(){
+            return this->errors;
+        };
+
     private:
         //order of Layers    
         int                 topologySize;
         vector<int>         topology;
         vector<Layer *>     Layers;
         vector<Matrix *>    weightMatrices;
+        vector<Matrix *>    gradientMatrices;
         vector<double>      input;
+        vector<double>      errors;
+        double              error;
+        vector<double>      target;
+        vector<double>      historicalErrors;
 };
 
 #endif

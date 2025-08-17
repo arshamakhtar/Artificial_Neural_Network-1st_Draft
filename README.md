@@ -1,39 +1,38 @@
-# Artificial Neural Network 1st Draft
+# Dimensionality Reduction Neural Network (Autoencoder)
 
-This is a custom implementation of an Artificial Neural Network written in C++14. It is built from scratch without using any external libraries or machine learning frameworks.
-The c++ implementation helps it to run in the gpu and make use of the multiprocessessing power of the gpu for faster outputs which could be further scaled to more robust and industrial frameworks
+This is a custom implementation of a **Dimensionality Reduction Autoencoder** written in **C++14**.  
+It is built entirely from scratch without external ML libraries or frameworks.  
+The C++ implementation can leverage GPU parallelism for scalable, fast computation, making it suitable for experimentation with compression of high-dimensional data.
 
 ## 🚀 Features
 
-- Fully connected feedforward neural network
-- Backpropagation with adjustable learning rate, momentum, and bias
-- Customizable topology
-- Lightweight and academic-oriented
-- Built using only standard C++ (C++14)
+- Fully connected **autoencoder** (feedforward + backpropagation)  
+- **Dimensionality reduction via bottleneck layer**  
+- Adjustable learning rate, momentum, and bias  
+- Customizable topology for different compression ratios  
+- Lightweight, academic-oriented, and written in pure **C++14**
 
 ## ⚙️ Structure
 
-- `src/` – Implementation source files
-- `include/` – Header files defining classes like `Neuron`, `Layer`, `Matrix`, and utilities
-- `main.cpp` – Example usage and training loop
-- `CMakeLists.txt` – Build configuration
+- `src/` – Source files for the autoencoder  
+- `include/` – Header files (`Neuron`, `Layer`, `Matrix`, etc.)  
+- `main.cpp` – Example: reducing 625-dimensional data to 30 latent features  
+- `CMakeLists.txt` – Build configuration  
 
 ## 🧠 Topology Example
 
-The network topology can be defined like:
-```cpp
-vector<int> topology = {3, 2, 3};
-```
-Where:
-- `3` input neurons
-- `2` hidden neurons
-- `3` output neurons
+Define the network architecture for dimensionality reduction:
 
-## 📈 Training
 
-The training loop feeds forward the input, calculates errors, and applies backpropagation:
+vector<int> topology = {625, 100, 30, 100, 625};
+
+## 📉 Dimensionality Reduction Workflow
+
+The autoencoder trains by learning to reconstruct its input.  
+The bottleneck layer acts as the compressed representation:
+
 ```cpp
-for(int i = 0; i < 1000; i++) {
+for (int epoch = 0; epoch < 1000; epoch++) {
     nn->feedForward();
     nn->setErrors();
     nn->backPropogation();
@@ -56,9 +55,9 @@ for(int i = 0; i < 1000; i++) {
 
 ```
 Epoch:999
-Total error: 0.117724
+Total error: 0.0117724
 ====================
-OUTPUT: 0.943096 0.00054734 0.943094
+OUTPUT: 0.953096 0.00054734 0.953094
 TARGET: 1 0 1
 ```
 

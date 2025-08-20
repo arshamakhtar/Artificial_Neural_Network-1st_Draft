@@ -49,7 +49,7 @@ for (int epoch = 0; epoch < 1000; epoch++) {
 ## 📋 Requirements
 
 - C++14 compatible compiler (e.g., `g++ -std=c++14`)
-- CMake (optional, for building via `CMakeLists.txt`)
+- CMake (for building via `CMakeLists.txt`)
 
 ## 🧪 Sample Output
 
